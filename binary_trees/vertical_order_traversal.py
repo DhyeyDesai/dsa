@@ -9,7 +9,7 @@ from collections import deque, defaultdict
 #         self.right = right
 class Solution:
     def verticalTraversal(self, root):
-        # create a dict to track of nodes based on their x-coordinate
+        # create a dict to keep track of nodes based on their x-coordinate
         locationMap = defaultdict(list)
         
         # create a queue where each element is a tuple
