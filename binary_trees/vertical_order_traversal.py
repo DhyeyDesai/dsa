@@ -1,4 +1,4 @@
-# link - https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
+# https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
 
 from collections import deque, defaultdict
 # Definition for a binary tree node.
