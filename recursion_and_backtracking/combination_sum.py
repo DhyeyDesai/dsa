@@ -20,7 +20,7 @@ class Solution:
             if currentSum == target:
                 # Create a copy of currentCombo before adding to result
                 # as currentCombo will be modified during backtracking
-                result.append(currentCombo)
+                result.append(currentCombo.copy())
                 return 
             
             # Explore candidates starting from startIdx
