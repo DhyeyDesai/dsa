@@ -1,3 +1,6 @@
+# 74. Search a 2D Matrix
+# https://leetcode.com/problems/search-a-2d-matrix/description/
+
 # Method 1: Binary Search - Find the correct row first, then the element.
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
