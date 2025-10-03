@@ -1,6 +1,8 @@
 # 746. Min Cost Climbing Stairs
 # https://leetcode.com/problems/min-cost-climbing-stairs/description/
 
+# TODO: add comments
+
 # Solution 1: Dynamic Programming (caching)
 class Solution1:
     def minCostClimbingStairs(self, cost: List[int]) -> int:

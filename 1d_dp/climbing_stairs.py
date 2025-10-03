@@ -1,6 +1,8 @@
 # 70. Climbing Stairs
 # https://leetcode.com/problems/climbing-stairs/description/
 
+# TODO: add comments
+
 # Solution 1: Recursion
 class Solution1:
     def climbStairs(self, n: int) -> int:
