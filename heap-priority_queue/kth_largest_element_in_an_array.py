@@ -3,7 +3,6 @@
 
 
 # Solution 1: Min-Heap
-import heapq
 # INTUITION:
 # To find the kth largest, we need to track the k largest elements seen so far.
 # Strategy: Use a min heap of size k.
@@ -16,6 +15,8 @@ import heapq
 
 # Time: O(n log k) - n insertions, each log k
 # Space: O(k)
+
+import heapq
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
@@ -53,6 +54,9 @@ class Solution2:
 # - Average: O(n) - we eliminate ~half the array each recursion: n + n/2 + n/4 + ... ≈ 2n
 # - Worst: O(n²) - if we always pick bad pivots (already sorted array)
 #   Can be improved to O(n) guaranteed with median-of-medians, but adds complexity
+# NOTE: Because of worst-case O(n²) behavior when the array is already sorted or nearly sorted,
+# there's a chance of getting TLE (Time Limit Exceeded) on LeetCode.
+# One way to tackle this is using 3-Way Partitioning (For Duplicate-Heavy Arrays) like in Solution 3
 
 # Space Complexity: 
 # - O(1) - in-place partitioning, modifies input array
@@ -87,3 +91,65 @@ class Solution2:
                 return nums[p]
         
         return quickSelect(0, len(nums)-1)
+    
+
+
+# Three-way QuickSelect with random pivot selection.
+
+# Time Complexity: O(n) average, O(n²) worst case
+# - Average: n + n/2 + n/4 + ... ≈ 2n = O(n) with random pivots
+# - Worst: O(n²) is theoretically possible but probability is ~1/n! (astronomically rare)
+# - Random pivot makes worst case virtually impossible in practice
+
+# Space Complexity: O(1) auxiliary space (in-place partitioning)
+# - Recursion stack: O(log n) average depth, O(n) worst case depth
+
+# Why O(n²) isn't a problem:
+# - Deterministic pivot (always rightmost) + sorted array = guaranteed O(n²) ❌
+# - Random pivot + ANY array = O(n²) probability ≈ 1/n! ≈ 0.0000...0001% ✅
+# - Even adversarial inputs can't force bad behavior with true randomization
+
+import random
+
+class Solution3:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        k = len(nums) - k
+
+        def quickSelect(l, r):
+            # Three-way partition: randomly pick pivot, then partition array into
+            # [elements < pivot | elements = pivot | elements > pivot]
+            # Only recurse on the section containing our target index k
+           
+
+            # Pick random pivot VALUE
+            pivot = nums[random.randint(l, r)]
+            
+            # Three pointers for three-way partitioning
+            # i tracks position for next "less than" element
+            # j scans through array
+            # t tracks position for next "greater than" element (from right)
+            i, j, t = l, l, r
+            
+            while j <= t:
+                if nums[j] < pivot:
+                    # Move smaller element to left section
+                    nums[i], nums[j] = nums[j], nums[i]
+                    i += 1
+                    j += 1
+                elif nums[j] > pivot:
+                    # Move larger element to right section
+                    nums[j], nums[t] = nums[t], nums[j]
+                    t -= 1  # Don't increment j - need to check swapped element
+                else:
+                    # Equal to pivot, just move forward
+                    j += 1
+            
+            # Result: [l..i-1] < pivot | [i..t] = pivot | [t+1..r] > pivot
+            if k < i:
+                return quickSelect(l, i - 1)
+            elif k > t:
+                return quickSelect(t + 1, r)
+            else:
+                return pivot
+        
+        return quickSelect(0, len(nums) - 1)
