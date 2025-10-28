@@ -1,7 +1,6 @@
 # 662. Maximum Width of Binary Tree
 # https://leetcode.com/problems/maximum-width-of-binary-tree/
 
-from collections import deque
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,7 +15,9 @@ from collections import deque
 # 2. keep track of indices of the first and last non-null elements.
 # 3. width of any level = last element index - first element index + 1
 # 4. compare with maxWidth global variable
- 
+
+from collections import deque
+
 class Solution:
     def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         if root is None:

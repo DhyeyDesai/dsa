@@ -1,7 +1,6 @@
 # 36. Valid Sudoku
 # https://leetcode.com/problems/valid-sudoku/description/
 
-from collections import defaultdict
 
 # Intuition:
 # A valid Sudoku requires each digit 1-9 to appear at most once in each row, column, 
@@ -15,6 +14,7 @@ from collections import defaultdict
 # Space Complexity: O(1)
 
 
+from collections import defaultdict
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         # Use sets to track seen digits in each row, column, and 3x3 box

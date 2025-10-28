@@ -1,7 +1,6 @@
 # 104. Maximum Depth of Binary Tree
 # https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 
-from collections import deque
 
 # Intuition:
 # The maximum depth of a binary tree is the longest path from root to a leaf.
@@ -19,6 +18,8 @@ from collections import deque
 
 
 # Recursive DFS Method    
+from collections import deque
+
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:

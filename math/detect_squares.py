@@ -1,7 +1,6 @@
 # 2013. Detect Squares
 # https://leetcode.com/problems/detect-squares/description/
 
-from collections import defaultdict
 
 # Intuition (Approach 1):
 # This solution uses a brute force approach with a single hash map to store all points and their frequencies.
@@ -10,6 +9,8 @@ from collections import defaultdict
 # 2. For count(): iterate through ALL stored points to find potential diagonal corners
 # 3. A point (x,y) is diagonal to query (px,py) if |x-px| = |y-py| and they form a valid square
 # 4. Multiply frequencies of the diagonal corner and the two other required corners
+
+from collections import defaultdict
 
 class DetectSquares:
 
