@@ -1,10 +1,6 @@
 # Root to Leaf Paths
 # https://bit.ly/3QA600D
 
-from typing import Optional
-from collections import deque
-
-from typing import List
 
 """
 definition of binary tree node.
@@ -41,7 +37,7 @@ class Solution:
                 dfs(node.left, result, path)
                 dfs(node.right, result, path) 
              
-             # Remove the last node before returning
+             # Backtrack: Remove the last node before returning
             path.pop()
         dfs(root, result, [])
         return result
