@@ -3,7 +3,7 @@
 # 323. Number of Connected Components In An Undirected Graph
 # https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
-# NeetCode - Islands and Treasure
+# NeetCode - Number of Connected Components In An Undirected Graph
 # https://neetcode.io/problems/count-connected-components/question?list=neetcode150
 
 # INTUITION:
