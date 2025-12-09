@@ -3,8 +3,8 @@
 # 286. Walls And Gates
 # https://leetcode.com/problems/walls-and-gates/description/
 
-# NeetCode - Islands and Treasure
-# https://neetcode.io/problems/islands-and-treasure/question?list=neetcode150
+# NeetCode - https://neetcode.io/problems/islands-and-treasure/question?list=neetcode150
+# Islands and Treasure
 
 # INTUITION:
 # Use multi-source BFS starting from all treasure chests (0s) simultaneously.

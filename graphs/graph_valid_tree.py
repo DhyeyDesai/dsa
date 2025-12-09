@@ -3,8 +3,7 @@
 # 178. Graph Valid Tree
 # https://leetcode.com/problems/graph-valid-tree/
 
-# NeetCode - Graph Valid Tree
-# https://neetcode.io/problems/valid-tree/question?list=neetcode150
+# NeetCode - https://neetcode.io/problems/valid-tree/question?list=neetcode150
 
 """
 INTUITION:
