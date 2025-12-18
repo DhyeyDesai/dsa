@@ -19,10 +19,9 @@ class Trie:
         self.root = TrieNode()  # Empty root node to start the trie
 
     def insert(self, word: str) -> None:
-        """
-        Inserts a word into the trie by creating nodes for each character.
-        Time: O(m), Space: O(m) where m is word length
-        """
+        # Inserts a word into the trie by creating nodes for each character.
+        # Time: O(m), Space: O(m) where m is word length
+
         cur = self.root
         
         # Traverse/create path for each character
@@ -34,10 +33,9 @@ class Trie:
         cur.endOfWord = True  # Mark the end of the inserted word
 
     def search(self, word: str) -> bool:
-        """
-        Returns True if the exact word exists in the trie.
-        Time: O(m), Space: O(1) where m is word length
-        """
+        # Returns True if the exact word exists in the trie.
+        # Time: O(m), Space: O(1) where m is word length
+
         cur = self.root
         
         # Try to follow the path for each character
@@ -50,10 +48,9 @@ class Trie:
         return cur.endOfWord
 
     def startsWith(self, prefix: str) -> bool:
-        """
-        Returns True if any word in the trie starts with the given prefix.
-        Time: O(m), Space: O(1) where m is prefix length
-        """
+        # Returns True if any word in the trie starts with the given prefix.
+        # Time: O(m), Space: O(1) where m is prefix length
+
         cur = self.root
         
         # Try to follow the path for each character in prefix
